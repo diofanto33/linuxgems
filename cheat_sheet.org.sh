@@ -10,42 +10,43 @@
 ** Basics:
 *** Getting help:
 
-# View the manual for target command
+# Mostrar el manual del comando 'command':
 man command
 
-# Get help with a target command (probably the same as above, but not always):
+# Obtener ayuda acerca del comando 'command' (probablemente la misma que 'man command'):
 command -h
 
-# In case you forget the name of a command, print possible commands relating to any given word:
+# En caso de que te olvides el nombre de un comando, podés imprimir posible comandos relacionado a la palabra 'word':
 apropos word
 
-# View index of help pages:
+# Mostrar el índice de las páginas de ayuda:
 info
 
 *** Command Line Utilities:
 **** Basic File and Directory Operations:
-# Print current working directory:
+
+# Imprimir el directorio de trabajo actual:
 pwd
 
-# Show files in current directory:
+# Listar los archivos en el directorio actual:
 ls
 
-# Show maximum information about all files, including hidden:
+# Listar información extra de todos los archivos, incluyendo los ocultos:
 ls -a
 
-# Recurse into subdirectories and list those as well:
+# Listar archivos de manera recursiva en cada subdirectorio:
 ls -R
 
-# List files by modification time, most recent first.
+# Listar archivos ordenados por su tiempo de modificación (más reciente primero):
 ls -lt
 
 # Move/rename a file or directory (be careful that you don't move the source over a destination with the same name):
 mv source destination
 
-# Delete target forever (be very careful), use -r recursive flag for directories:
+# Suprimir el archivo 'target' por siempre (ser cuidadoso). Usar rm -r si 'target' es un directorio.
 rm target
 
-# Copy file or directory:
+# Copiar un archivo o directorio desde 'source' a 'destination':
 cp source destination
 
 # Mount filesytem:
@@ -65,13 +66,13 @@ mkfs
 
 **** System Administration:
 
-# Execute command as an administrator (can be destructive/insecure. Use only for system administration tasks):
+# Ejecutar el comando 'command' como administrador (puede ser inseguro/destructivo. Usar sólo para administración de sistema):
 sudo command
 
-# Become system administrator:
+# Convertirse en usuario administrador:
 sudo -s
 
-# Quit system administration:
+# Salir de usuario administrador:
 exit
 
 # Forgot to type sudo in front of a command and already hit enter? Repeat the last command using sudo:
@@ -120,30 +121,30 @@ command | less
 
 **** Working With Files:
 
-# Print a file in terminal:
+# Imprimir el contenido del archivo 'file' en la terminal:
 cat file
 
-# Find files matching filename:
+# Buscar archivos cuyo nombres coincidan con 'filename':
 locate filename
 
-# See the version of a program or the location of the program
+# Ver la versión o la ubicación del programa 'appname':
 which appname
 
-# Search through filename for matches to phrase:
+# Buscar la cadena 'phrase' dentro del contenido de 'filename':
 grep phrase filename
 
-# Search through output of a command for phrase:
+# Buscar la cadena 'phrase' dentro de la salida del comando 'command':
 command | grep phrase
 
 **** Working With Processes:
 
-# List all running processes:
+# Listar todos los procesos corriendo:
 ps -e
 
-# Standard system monitor showing a more extensive view of all processes and system resources:
+# Monitor sistema estándar mostrando información más extensa de todos los procesos y recursos de sistema:
 top
 
-# Like top, but with a better, cleaner interface:
+# Similar a top, pero con una mejor interfaz:
 htop
 
 # Stop a process from using all system resources and lagging computer:
@@ -152,7 +153,7 @@ renice process_name
 # Kill misbehaving process (use sparingly, last resort, try 'renice' command first):
 pkill process name
 
-# Start a process in the background
+# Lanzar el comando 'command' en modo background (proceso de fondo):
 command &
 
 # Start a process in the background and have it keep running after you log off
@@ -194,14 +195,13 @@ gpg-zip -o encrypted_filename.tgz.gpg -c -s file_to_be_encrypted
 
 **** Output Redirects:
 
-# Redirect output of one command into the input of another with a pipe:
+# Redirigir la salida de 'command_1' a la entrada de 'command_2' a través de un pipe |:
 command_1 | command_2
 
-# Or even:
-
+# Incluso con más de dos comandos:
 command_1 | command_2 | command_3
 
-# Redirect output to a file:
+# Redirigir la salida de 'command' al archivo 'file':
 command > file
 
 # Or:
