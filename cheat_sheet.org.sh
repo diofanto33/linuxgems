@@ -40,7 +40,7 @@ ls -R
 # Listar archivos ordenados por su tiempo de modificación (más reciente primero):
 ls -lt
 
-# Move/rename a file or directory (be careful that you don't move the source over a destination with the same name):
+# Mover/renombrar el archivo o directorio 'source' al destino 'destination':
 mv source destination
 
 # Suprimir el archivo 'target' por siempre (ser cuidadoso). Usar rm -r si 'target' es un directorio.
@@ -49,10 +49,10 @@ rm target
 # Copiar un archivo o directorio desde 'source' a 'destination':
 cp source destination
 
-# Mount filesytem:
+# Montar el sistema de archivos 'device_name':
 mount /dev/device_name /media/device_name
 
-# Unmount:
+# Desmontar el sistema de archivos 'device_name':
 umount /media/device_name
 
 # Forensically clone filesystems and do other low-level operations on files. Be careful with this one. Can be destructive:
@@ -75,7 +75,7 @@ sudo -s
 # Salir de usuario administrador:
 exit
 
-# Forgot to type sudo in front of a command and already hit enter? Repeat the last command using sudo:
+# Olvidaste escribir sudo delatnte de un comando y ya presionaste enter? Repite el último comando usando sudo:
 sudo !!
 
 ***** Installing software from a .tgz (also known as a tarball):
@@ -164,7 +164,7 @@ nohup command &
 # Make a simple compressed backup of files or directories:
 tar -cvzf backup_output.tgz target_files_or_directories
 
-# Open a compressed .tgz or .tar.gz file:
+# Abrir un archivo comprimido con extensión .tgz o .tar.gz:
 tar -xvf target.tgz
 
 # Encrypt a file:
@@ -178,16 +178,16 @@ gpg-zip -o encrypted_filename.tgz.gpg -c -s file_to_be_encrypted
 
 *** The Bash shell:
 **** File Name expansions:
-# Current user's home directory:
+# Directorio home del usuario actual:
 ~/
 
-# Current directory:
+# Directorio actual:
 ./
 
-# Parent directory:
+# Directorio padre:
 ../
 
-# Or even (Two parent directories down):
+# O incluso (dos directorios padres abajo):
 ../../
 
 # All files in target directory. (Be very careful.):
@@ -205,14 +205,12 @@ command_1 | command_2 | command_3
 command > file
 
 # Or:
-
 file > file
 
 # Or even, to redirect in a different direction:
 file < file
 
-# Append output rather than writing over the target file:
-
+# Añadir la salida de 'file_or_command' a 'file', en vez de sobreescribirlo:
 file_or_command >> file
 
 # Works like |, but it writes output to both target and terminal:
@@ -222,35 +220,35 @@ tee target
 command > /dev/null 2>&1
 
 **** Controlling Execution:
-# Wait until command 1 is finished to execute command 2
+# Esperar a que 'command_1' termine para ejecutar 'command_2':
 command_1 ; command_2
 
-# Or even:
+# O incluso:
 command_1 ; command_2 ; command_3
 
-# && acts like ; but only executes command_2 if command_1 indicates that it succeeded without error by returning 0.
+# && actúa como ; pero sólo ejecuta 'command_2' si 'command_1' indica que terminó sin error retornando 0:
 command_1 && command_2
 
-# || acts like && but only executes command_2 if command_1 indicates an error by returning 1.
+# || actúa como && pero sólo ejecuta 'command_2' si 'command_1' indica un error retornando 1:
 command_1 || command_2
 
 **** Bash Wildcards:
 # Zero or more characters:
 *
 
-# Matches "phrase" and any number of trailing characters:
+# Coincide con cualquier cadena que comience con 'phrase':
 phrase*
 
 # Matches any incidences of "phrase" with any trailing or leading chars:
 *phrase*
 
-# Matches any one char:
+# Coincide con cualquier caractér:
 ?
 
-# Matches any of the characters listed inside brackets:
+# Coincide con algunos de los caractéres listado dentro de los corchetes:
 [chars]
 
-# Matches a range of chars between a-z:
+# Coincide con cualquier caractér en a, b, c, ..., x, y, z:
 [a-z]
 
 ** Advanced:
@@ -292,10 +290,10 @@ nmap localhost
 
 ***** wget:
 
-# download a file over http:
-wget http://example.com/folder/file 
+# Descargar un archivo por http:
+wget http://example.com/folder/file
 
-# complete a partially downloaded file:
+# Completar un archivo descargado parcialmente:
 wget -c http://example.com/folder/file
 
 # start download in background:
