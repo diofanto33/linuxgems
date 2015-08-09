@@ -1,14 +1,18 @@
 # cheat_sheet.org.sh
-# The contents of this file are released under the GNU General Public License. Feel free to reuse the contents of this work, as long as the resultant works give proper attribution and are made publicly available under the GNU General Public License.
+# The contents of this file are released under the GNU General Public License.
+# Feel free to reuse the contents of this work, as long as the resultant works
+# give proper attribution and are made publicly available under the 
+# GNU General Public License.
 # Best viewed in emacs org-mode.
-# Alternately, one can keep this cheat sheet handy by adding the following line to ~/.bashrc:
+# Alternately, one can keep this cheat sheet handy by adding the 
+# following line to ~/.bashrc:
 #
 # alias cheatsheet="less ~/path_to_cheat_sheet.org.sh" 
 
 
-* Reference:
-** Basics:
-*** Getting help:
+* Referencias:
+** Básicos:
+*** Obteniendo ayuda:
 
 # Mostrar el manual del comando 'command':
 man command
@@ -22,8 +26,9 @@ apropos word
 # Mostrar el índice de las páginas de ayuda:
 info
 
-*** Command Line Utilities:
-**** Basic File and Directory Operations:
+
+*** Utilidades de líneas de comandos:
+**** Operaciones básicas sobre archivos y directorios:
 
 # Imprimir el directorio de trabajo actual:
 pwd
@@ -55,16 +60,17 @@ mount /dev/device_name /media/device_name
 # Desmontar el sistema de archivos 'device_name':
 umount /media/device_name
 
-# Forensically clone filesystems and do other low-level operations on files. Be careful with this one. Can be destructive:
+# Clonar sistemas de archivos y hacer otras operaciones de bajo nivel sobre archivos. Ser cuidadoso, puede ser destructivo:
 dd
 
-# Work with disk partitions:
+# Trabajar con particiones de discos:
 parted
 
-# Filesystem creation tool:
+# Herramienta de creaciones de sistema de archivos:
 mkfs
 
-**** System Administration:
+
+**** Administración del sistema:
 
 # Ejecutar el comando 'command' como administrador (puede ser inseguro/destructivo. Usar sólo para administración de sistema):
 sudo command
@@ -75,8 +81,9 @@ sudo -s
 # Salir de usuario administrador:
 exit
 
-# Olvidaste escribir sudo delatnte de un comando y ya presionaste enter? Repite el último comando usando sudo:
+# Olvidaste escribir sudo delante de un comando y ya presionaste enter? Repite el último comando usando sudo:
 sudo !!
+
 
 ***** Installing software from a .tgz (also known as a tarball):
 
@@ -99,6 +106,7 @@ make install
 # Clean up files in directory, in case make command fails, or just to remove unnecessary cruft:
 make clean
 
+
 ***** Ubuntu/Debian Software repositories:
 
 # Check distro repositories for software updates:
@@ -119,7 +127,8 @@ sudo apt-get install package_name
 # View the output of a command in a more convenient format:
 command | less
 
-**** Working With Files:
+
+**** Trabajando con archivos:
 
 # Imprimir el contenido del archivo 'file' en la terminal:
 cat file
@@ -136,7 +145,8 @@ grep phrase filename
 # Buscar la cadena 'phrase' dentro de la salida del comando 'command':
 command | grep phrase
 
-**** Working With Processes:
+
+**** Trabajando con procesos:
 
 # Listar todos los procesos corriendo:
 ps -e
@@ -147,17 +157,18 @@ top
 # Similar a top, pero con una mejor interfaz:
 htop
 
-# Stop a process from using all system resources and lagging computer:
+# Detener el proceso 'process_name' de usar todos los recursos del sistema (cambiar prioridad):
 renice process_name
 
-# Kill misbehaving process (use sparingly, last resort, try 'renice' command first):
-pkill process name
+# Matar el proceso 'process_name' (usar como último recurso, intentar 'renice' antes):
+pkill process_name
 
 # Lanzar el comando 'command' en modo background (proceso de fondo):
 command &
 
-# Start a process in the background and have it keep running after you log off
+# Lanzar el proceso de 'command' en background y manterlo corriendo luego de cerrar la sesión:
 nohup command &
+
 
 **** Compression and Encryption:
 
@@ -176,8 +187,10 @@ gpg -o outputfilename -d target.gpg
 # Zip and encrypt a directory simultaneously:
 gpg-zip -o encrypted_filename.tgz.gpg -c -s file_to_be_encrypted
 
+
 *** The Bash shell:
 **** File Name expansions:
+
 # Directorio home del usuario actual:
 ~/
 
@@ -192,6 +205,7 @@ gpg-zip -o encrypted_filename.tgz.gpg -c -s file_to_be_encrypted
 
 # All files in target directory. (Be very careful.):
 /*
+
 
 **** Output Redirects:
 
@@ -219,7 +233,9 @@ tee target
 # Redirect standard output and error to /dev/null, where it is deleted.
 command > /dev/null 2>&1
 
+
 **** Controlling Execution:
+
 # Esperar a que 'command_1' termine para ejecutar 'command_2':
 command_1 ; command_2
 
@@ -232,7 +248,9 @@ command_1 && command_2
 # || actúa como && pero sólo ejecuta 'command_2' si 'command_1' indica un error retornando 1:
 command_1 || command_2
 
+
 **** Bash Wildcards:
+
 # Zero or more characters:
 *
 
@@ -250,6 +268,7 @@ phrase*
 
 # Coincide con cualquier caractér en a, b, c, ..., x, y, z:
 [a-z]
+
 
 ** Advanced:
 *** Command Line Utilities, Continued:
@@ -288,6 +307,7 @@ iptables -L
 # Scan this machine(localhost) to check for open ports:
 nmap localhost
 
+
 ***** wget:
 
 # Descargar un archivo por http:
@@ -302,6 +322,7 @@ wget -b wget -c http://example.com/folder/file
 # download a file from ftp server:
 wget --ftp-user=USER --ftp-password=PASS ftp://example.com/folder/file
 
+
 ***** netcat:
 
 # Listen for input from network on recieving_port, dump it to a file (insecure, but handy):
@@ -312,6 +333,7 @@ command | netcat -w number_of_seconds_before_timeout target_ip target_port
 
 # Use tar to compress and output a file as a stream, pipe it to a target ip and port over the network:
 sudo tar -czf - filename | netcat -w number_of_seconds_before_timeout target_ip target_port
+
 
 **** Users and Groups:
 # Change owner of a file or directory:
@@ -353,6 +375,7 @@ talk
 # Interactive talk program to talk to other users from terminal (must be installed from repositories.):
 ytalk
 
+
 **** Working With Files, Continued:
 # View what processes are using what files:
 lsof
@@ -392,6 +415,7 @@ rename -n 's/[\s]/''/g' *
 
 # change capitals to lowercase in filenames in current directory:
 rename 'y/A-Z/a-z/' *
+
 
 ***** Environment and Hardware:
 # print motherboard information
@@ -440,6 +464,7 @@ dumpcap
 # Dump info about keyboard drivers:
 dumpkeys
 
+
 ***** Ubuntu System Administration, Advanced (Continued):
 
 # Add a Personal Package Archive from Ubuntu Launchpad:
@@ -447,6 +472,7 @@ add-apt-repository
 
 # Install a .deb file from command line:
 sudo dpkg -i package.deb
+
 
 **** Python:
 
@@ -473,6 +499,7 @@ pip freeze -E dirname > requirements.txt
 
 # import python virtual environment from a requirements.txt file:
 pip install -E dirname -r requirements.txt
+
 
 **** git (all commands must be performed in the same directory as .git folder):
 
@@ -516,6 +543,7 @@ git merge [branchname] [branchname]
 # Show all branches of a project:
 git branch
 
+
 *** Virtualization:
 
 #clone a virtual machine (this works, it's been tested):
@@ -527,6 +555,7 @@ vboxmanage clonehd virtual_machine_name.vdi --format VDI ~/target_virtual_machin
 sudo apt-get install virtualbox-ose-guest-utils
 
 sudo mount -t vboxsf name_of_shared_folder_specified_in_Virtualbox path_of_mountpoint
+
 
 *** mysql:
 
