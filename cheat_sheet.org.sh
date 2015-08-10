@@ -20,7 +20,7 @@ man command
 # Obtener ayuda acerca del comando 'command' (probablemente la misma que 'man command'):
 command -h
 
-# En caso de que te olvides el nombre de un comando, podés imprimir posible comandos relacionado a la palabra 'word':
+# En caso de que te olvides el nombre de un comando, podés imprimir posible comandos relacionados a la palabra 'word':
 apropos word
 
 # Mostrar el índice de las páginas de ayuda:
@@ -224,7 +224,7 @@ file > file
 # Or even, to redirect in a different direction:
 file < file
 
-# Añadir la salida de 'file_or_command' a 'file', en vez de sobreescribirlo:
+# Añadir la salida de 'file_or_command' al contenido de 'file', en vez de sobreescribirlo:
 file_or_command >> file
 
 # Works like |, but it writes output to both target and terminal:
@@ -260,13 +260,13 @@ phrase*
 # Matches any incidences of "phrase" with any trailing or leading chars:
 *phrase*
 
-# Coincide con cualquier caractér:
+# Coincide con cualquier carácter:
 ?
 
-# Coincide con algunos de los caractéres listado dentro de los corchetes:
+# Coincide con algunos de los caracteres listado dentro de los corchetes:
 [chars]
 
-# Coincide con cualquier caractér en a, b, c, ..., x, y, z:
+# Coincide con cualquier carácter en a, b, c, ..., x, y, z:
 [a-z]
 
 
@@ -376,35 +376,36 @@ talk
 ytalk
 
 
-**** Working With Files, Continued:
-# View what processes are using what files:
+**** Trabajando con archivos, continuación:
+
+# Ver que procesos están usando que archivos:
 lsof
 
-# View the differences between two files:
+# Ver las diferencias entre el contenido de dos archivos:
 diff file_1 file_2
 
-# Output the top number_of_lines of file:
+# Imprimir las primeras 'number_of_lines' líneas del archivo 'file':
 head -n number_of_lines file
 
-# Like head, but it outputs the last -n lines:
+# Como head, pero imprime las últimas 'number_of_line' líneas del archivo 'file':
 tail -n number_of_lines file
 
-# Checksum a file:
+# Calcular el MD5 del archivo 'file':
 md5sum file
 
-# Checksum every file in a directory (install this one from repositories.):
+# Calcula el MD5 de cada archivo en un directorio (hay que instalarlo desde los repositorios):
 md5deep directory
 
-# Checksum a file (better algorithm with no hash collisions):
-sha1sum
+# Calcula el SHA1 del archivo 'file' (mejor algoritmo que MD5):
+sha1sum file
 
-# Same operation as md5deep, but using sha1:
+# Similar a md5sdeep, pero utilizando SHA1:
 sha1deep
 
 # Call command every few number_of_seconds, and highlight difference in output:
 watch -d -n number_of_seconds command
 
-# Execute command, print how long it took:
+# Ejecutar un comando e imprimir cuanto tiempo le tomó:
 time command
 
 # View files in directory from largest to smallest:
@@ -431,7 +432,6 @@ echo $HOSTNAME
 lsb_release -a
 
 # Or even:
-
 more /etc/issue
 
 # Print linux kernel version:
