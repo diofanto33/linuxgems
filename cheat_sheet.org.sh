@@ -20,7 +20,7 @@ man command
 # Obtener ayuda acerca del comando 'command' (probablemente la misma que 'man command'):
 command -h
 
-# En caso de que te olvides el nombre de un comando, podés imprimir posible comandos relacionados a la palabra 'word':
+# En caso de que te olvidés el nombre de un comando, podés imprimir posible comandos relacionados a la palabra 'word':
 apropos word
 
 # Mostrar el índice de las páginas de ayuda:
@@ -48,7 +48,7 @@ ls -lt
 # Mover/renombrar el archivo o directorio 'source' al destino 'destination':
 mv source destination
 
-# Suprimir el archivo 'target' por siempre (ser cuidadoso). Usar rm -r si 'target' es un directorio.
+# Suprimir el archivo 'target' por siempre (con cuidado!). Usar rm -r si 'target' es un directorio.
 rm target
 
 # Copiar un archivo o directorio desde 'source' a 'destination':
@@ -60,7 +60,7 @@ mount /dev/device_name /media/device_name
 # Desmontar el sistema de archivos 'device_name':
 umount /media/device_name
 
-# Clonar sistemas de archivos y hacer otras operaciones de bajo nivel sobre archivos. Ser cuidadoso, puede ser destructivo:
+# Clonar sistemas de archivos y hacer otras operaciones de bajo nivel sobre archivos. Con cuidado, puede ser destructivo:
 dd
 
 # Trabajar con particiones de discos:
@@ -81,29 +81,29 @@ sudo -s
 # Salir de usuario administrador:
 exit
 
-# Olvidaste escribir sudo delante de un comando y ya presionaste enter? Repite el último comando usando sudo:
+# ¿Te olvidaste escribir sudo delante de un comando y ya presionaste enter? Repite el último comando usando sudo:
 sudo !!
 
 
-***** Installing software from a .tgz (also known as a tarball):
+***** Instalar programas desde un .tgz (también denominado tarball):
 
-# First, unzip the tarball (see section on tar, below)
-# Next, move into unzipped directory:
+# Primero, descomprimí el tarball (ver la sección de tar abajo)
+# Luego, cambiar al directorio que se descomprimió:
 cd software_directory
 
-# Always read README first if it is provided, in case there are any modifications to the procedure outlined below:
+# Siempre hay que leer el README primero en caso de que haya, ya que puede haber modificaciones al procedimiento que se da abajo:
 cat README
 
-# Automatically check for appropriate configurations and generate a MAKE file in the directory:
+# Revisa de manera automágica la configuración adecuada y genera un archivo MAKE en el directorio:
 ./configure
 
-# Compile software. May require sudo:
+# Compila el programa. Puede que necesite sudo:
 make
 
-# Move files into their appropriate locations. May also require sudo:
+# Mueve o copia los archivos al lugar adecuado. También puede que necesite sudo:
 make install
 
-# Clean up files in directory, in case make command fails, or just to remove unnecessary cruft:
+# Limpia todos los archivos generados en la compilación y deja todo limipo. Puede ser usado si la compilación falla o bien para sacar la basura.
 make clean
 
 
