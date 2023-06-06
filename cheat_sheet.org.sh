@@ -1,4 +1,4 @@
-# cheat_sheet.org.sh
+#cheat_sheet.org.sh
 # The contents of this file are released under the GNU General Public License.
 # Feel free to reuse the contents of this work, as long as the resultant works
 # give proper attribution and are made publicly available under the 
@@ -543,6 +543,8 @@ git merge [branchname] [branchname]
 # Show all branches of a project:
 git branch
 
+# Merge file from source branch into target branch:
+git checkout [target_branch] -- [filename]
 
 *** Virtualization:
 
