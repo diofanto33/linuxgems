@@ -185,6 +185,17 @@ grep phrase filename
 # Buscar la cadena 'phrase' dentro de la salida del comando 'command':
 command | grep phrase
 
+# tar comprime archivos y directorios: 
+tar -cvzf archive_name.tgz directory_or_file_to_compress 
+
+# Descomprimir un archivo tarball: 
+tar -xvzf archive_name.tgz
+
+# comprimir archivos y directorios con zip: 
+zip archive_name.zip directory_or_file_to_compress 
+
+# Descomprimir un archivo zip: 
+unzip archive_name.zip 
 
 **** Trabajando con procesos:
 
