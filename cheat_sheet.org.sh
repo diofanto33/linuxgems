@@ -9,7 +9,6 @@
 #
 # alias cheatsheet="less ~/path_to_cheat_sheet.org.sh" 
 
-
 * Referencias:
 ** Básicos:
 *** Obteniendo ayuda:
@@ -141,23 +140,32 @@ pacman -Fs keyword
 # To display extensive information about a given package:
 pacman -Si package_name
 
+# To display extensive information about a given package, including dependencies: 
+pacman -Sii package_name 
+
+# For locally installed packages:
+pacman -Qi package_name
+
 # Search for package in the repositories:
 pacman -Ss keyword 
 
 # Download and install a package:
-sudo pacman -S package_name 
+pacman -S package_name 
 
 # To remove a package and its dependencies which are not required by any other installed package:
-sudo pacman -Rs package_name 
+pacman -Rs package_name 
 
 # To remove a package and its dependencies which are required by other installed packages: 
-sudo pacman -Rns package_name 
+pacman -Rns package_name 
 
 # To remove a package and its dependencies which are required by other installed packages and are not required by any other installed package: 
-sudo pacman -Rcns package_name 
+pacman -Rcns package_name 
 
 # To remove a package and its dependencies which are not required by any other installed package and are not required by any other installed package: 
-sudo pacman -Rcs package_name 
+pacman -Rcs package_name 
+
+# Install a 'local' package that is not from a remote repository (e.g. the package is from the AUR): 
+pacman -U /path/to/package/package_name-version.pkg.tar.zst
 
 
 **** Trabajando con archivos:
