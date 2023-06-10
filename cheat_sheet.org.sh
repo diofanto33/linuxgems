@@ -167,9 +167,11 @@ pacman -Rcs package_name
 # Install a 'local' package that is not from a remote repository (e.g. the package is from the AUR): 
 pacman -U /path/to/package/package_name-version.pkg.tar.zst
 
+***** Random:
 
-***** Dashboard: 
-
+# top 10 commands used by the user:
+history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n 10
+ 
 # Show the current date and time: 
 tty-clock -c 
 
