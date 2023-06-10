@@ -127,6 +127,38 @@ sudo apt-get install package_name
 # View the output of a command in a more convenient format:
 command | less
 
+***** Arch Linux Software repositories:
+
+# Check distro repositories for software updates: 
+sudo pacman -Syu 
+
+# To search for already installed packages:
+pacman -Qs keyword
+
+# To search for package file names in remote packages:
+pacman -Fs keyword
+
+# To display extensive information about a given package:
+pacman -Si package_name
+
+# Search for package in the repositories:
+pacman -Ss keyword 
+
+# Download and install a package:
+sudo pacman -S package_name 
+
+# To remove a package and its dependencies which are not required by any other installed package:
+sudo pacman -Rs package_name 
+
+# To remove a package and its dependencies which are required by other installed packages: 
+sudo pacman -Rns package_name 
+
+# To remove a package and its dependencies which are required by other installed packages and are not required by any other installed package: 
+sudo pacman -Rcns package_name 
+
+# To remove a package and its dependencies which are not required by any other installed package and are not required by any other installed package: 
+sudo pacman -Rcs package_name 
+
 
 **** Trabajando con archivos:
 
