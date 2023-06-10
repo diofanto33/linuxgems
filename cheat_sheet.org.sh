@@ -168,6 +168,14 @@ pacman -Rcs package_name
 pacman -U /path/to/package/package_name-version.pkg.tar.zst
 
 
+***** Dashboard: 
+
+# Show the current date and time: 
+tty-clock -c 
+
+# Show the battery status and other system information: 
+gotop -l battery 
+
 **** Trabajando con archivos:
 
 # Imprimir el contenido del archivo 'file' en la terminal:
@@ -185,17 +193,6 @@ grep phrase filename
 # Buscar la cadena 'phrase' dentro de la salida del comando 'command':
 command | grep phrase
 
-# tar comprime archivos y directorios: 
-tar -cvzf archive_name.tgz directory_or_file_to_compress 
-
-# Descomprimir un archivo tarball: 
-tar -xvzf archive_name.tgz
-
-# comprimir archivos y directorios con zip: 
-zip archive_name.zip directory_or_file_to_compress 
-
-# Descomprimir un archivo zip: 
-unzip archive_name.zip 
 
 **** Trabajando con procesos:
 
@@ -222,6 +219,14 @@ nohup command &
 
 
 **** Compression and Encryption:
+
+# Compression and encryption are often used together. Here are some examples of how to use them. 
+
+# Compress a file or directory into a zip archive:
+zip archive_name.zip directory_or_file_to_compress 
+
+# Unzip a zip file: 
+unzip archive_name.zip 
 
 # Make a simple compressed backup of files or directories:
 tar -cvzf backup_output.tgz target_files_or_directories
