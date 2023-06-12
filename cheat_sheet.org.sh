@@ -13,8 +13,18 @@
 ** Básicos:
 *** Obteniendo ayuda:
 
-# Mostrar el manual del comando 'command':
+# Las páginas de manual (manpages) se dividen en secciones para organizar
+# y clasificar la información relacionada. Las secciones más comunes son:
+
+# Sección 1: Contiene páginas de manual para comandos y programas ejecutables del sistema
 man command
+
+# Sección 2: Está dedicada a las llamadas al sistema (system calls) y funciones del kernel.
+man 2 open 
+
+# La sección 3: de las páginas de manual en Linux contiene información sobre las funciones
+# de la biblioteca estándar de C
+man 3 printf
 
 # Obtener ayuda acerca del comando 'command' (probablemente la misma que 'man command'):
 command -h
