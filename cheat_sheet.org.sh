@@ -568,6 +568,8 @@ pip freeze -E dirname > requirements.txt
 # import python virtual environment from a requirements.txt file:
 pip install -E dirname -r requirements.txt
 
+# manpages for python modules:
+pydoc module_name
 
 **** git (all commands must be performed in the same directory as .git folder):
 
